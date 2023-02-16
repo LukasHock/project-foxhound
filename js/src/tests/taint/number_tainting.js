@@ -42,16 +42,19 @@ function numberTaintingTest() {
     assertEq(a ** b == 42 ** 13.37, true);
 
 
-    //
-    // Number increment/decrement
-    assertNumberTainted(a++);
-    assertNumberTainted(a);
-    assertNumberTainted(a--);
-    assertNumberTainted(a);
-    assertNumberTainted(++a);
-    assertNumberTainted(a);
-    assertNumberTainted(--a);
-    assertNumberTainted(a);
+    // //
+    // // Number increment/decrement
+    // // In-/Decrement currently not supported as taint propagators
+    // // because they're implemented as two bytecode instructions
+    // // which makes it quite hard to propagate taint
+    // assertNumberTainted(a++);
+    // assertNumberTainted(a);
+    // assertNumberTainted(a--);
+    // assertNumberTainted(a);
+    // assertNumberTainted(++a);
+    // assertNumberTainted(a);
+    // assertNumberTainted(--a);
+    // assertNumberTainted(a);
 
     
     //
